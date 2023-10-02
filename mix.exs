@@ -45,6 +45,7 @@ defmodule GrubClub.MixProject do
       {:dialyxir, "~> 1.3", only: [:dev], runtime: false},
       {:json, "~> 1.4"},
       {:poison, "~> 5.0"},
+      {:csv, "~> 3.2"},
       {:telemetry_metrics, "~> 0.6"},
       {:telemetry_poller, "~> 1.0"},
       {:gettext, "~> 0.20"},

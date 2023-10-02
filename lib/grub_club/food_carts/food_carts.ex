@@ -7,7 +7,7 @@ defmodule GrubClub.FoodCarts do
     |> Enum.to_list()
     |> Enum.map(&elem(&1, 1))
     |> Enum.filter(&(String.length(&1["Zip Codes"]) == 5))
-    |> Enum.map(&Map.take(&1, ["Applicant", "Address", "Latitude", "Longitude", "Zip Codes"]))
+    |> Enum.map(&Map.take(&1, ["Applicant", "Address", "FoodItems", "Latitude", "Longitude", "Zip Codes"]))
     |> Enum.map(&Map.new(&1, fn x -> {String.downcase(elem(x, 0)), elem(x, 1)} end))
     |> Enum.map(&Map.new(&1, fn x -> {String.replace(elem(x, 0), " ", "_"), elem(x, 1)} end))
     |> Enum.map(
@@ -16,6 +16,7 @@ defmodule GrubClub.FoodCarts do
     |> Enum.map(
       &Map.new([
         {:applicant, &1["applicant"]},
+        {:food_items, &1["fooditems"]},
         {:address, &1["address"]},
         {:latitude, &1["latitude"]},
         {:longitude, &1["longitude"]},

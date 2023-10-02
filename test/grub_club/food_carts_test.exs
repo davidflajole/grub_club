@@ -17,7 +17,7 @@ defmodule GrubClub.FoodCartsTest do
       random_row = Enum.random(state.data)
 
       for key <- Map.keys(random_row) do
-        assert key in [:address, :applicant, :latitude, :longitude, :zip_code]
+        assert key in [:address, :applicant, :food_items, :latitude, :longitude, :zip_code]
       end
     end
 

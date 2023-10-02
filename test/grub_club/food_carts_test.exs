@@ -31,4 +31,14 @@ defmodule GrubClub.FoodCartsTest do
     end
   end
 
+  describe("get_cart_by_zip_code/1") do
+    # Test cases for the get_cart_by_zip_code/1 function in the FoodCarts context
+    test "get_cart_by_zip_code/1 returns records for zip_code 28855", _state do
+      zip_carts =
+        FoodCarts.get_cart_by_zip_code("28855")
+        |> Enum.count
+
+        assert zip_carts > 0
+    end
+  end
 end

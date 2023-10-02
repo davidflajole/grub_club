@@ -21,4 +21,9 @@ defmodule GrubClub.FoodCarts do
       ])
     )
   end
+
+  def get_cart_by_zip_code(zip_code) do
+    get_food_carts()
+    |> Enum.filter(&(&1.zip_code === zip_code))
+  end
 end

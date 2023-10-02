@@ -21,21 +21,20 @@ defmodule GrubClub.FoodCartsTest do
       end
     end
 
-    test "all zip codes are 5 characters long", state do
-      zip_row_count =
+    test "all zip codes are San Francisco zip codes", state do
+      bad_row_count =
         state.data
-        |> Enum.filter(&String.length(&1.zip_code) != 5)
-        |> Enum.count
+        |> Enum.find(&(String.to_integer(&1.zip_code) not in 94101..94188 ))
 
-        assert zip_row_count == 0
+        assert bad_row_count == nil
     end
   end
 
-  describe("get_cart_by_zip_code/1") do
-    # Test cases for the get_cart_by_zip_code/1 function in the FoodCarts context
-    test "get_cart_by_zip_code/1 returns records for zip_code 28855" do
+  describe("find_carts_by_zip_code/1") do
+    # Test cases for the find_carts_by_zip_code/1 function in the FoodCarts context
+    test "find_carts_by_zip_code/1 returns records for zip_code 94111" do
       zip_carts =
-        FoodCarts.get_cart_by_zip_code("28855")
+        FoodCarts.find_carts_by_zip_code("94111")
         |> Enum.count
 
         assert zip_carts > 0

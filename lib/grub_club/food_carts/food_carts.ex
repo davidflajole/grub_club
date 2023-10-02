@@ -1,4 +1,6 @@
 defmodule GrubClub.FoodCarts do
+
+  @spec get_food_carts :: list
   def get_food_carts() do
     File.stream!("assets/MFFP.csv")
     |> CSV.decode(headers: true)
@@ -17,12 +19,21 @@ defmodule GrubClub.FoodCarts do
         {:address, &1["address"]},
         {:latitude, &1["latitude"]},
         {:longitude, &1["longitude"]},
-        {:zip_code, &1["zip_code"]}
+        {:zip_code, mock_geo_sf_zip()}
       ])
     )
   end
 
-  def get_cart_by_zip_code(zip_code) do
+  def mock_geo_sf_zip() do
+    File.stream!("assets/SanFranZips.csv")
+    |> CSV.decode
+    |> Enum.to_list
+    |> Enum.map(&elem(&1, 1))
+    |> Enum.random
+    |> hd()
+  end
+
+  def find_carts_by_zip_code(zip_code) do
     get_food_carts()
     |> Enum.filter(&(&1.zip_code === zip_code))
   end

@@ -1,18 +1,18 @@
-# GrubClub
+# GrubClub FoodCarts Context and Tests
 
-To start your Phoenix server:
+Built on Elixir/Erlang:
+  * Erlang/OTP 26 [erts-14.0.2] [source] [64-bit] [smp:12:12] [ds:12:12:10] [async-threads:1] [jit:ns] [dtrace]
+  * Elixir 1.15.6 (compiled with Erlang/OTP 26)
 
+Steps to run tests:
+  * Clone repo to working directory
   * Run `mix setup` to install and setup dependencies
+  * Run mix test to see tests are passing
   * Start Phoenix endpoint with `mix phx.server` or inside IEx with `iex -S mix phx.server`
+    > verify that project runs and standard phoenix bootstrapped page loads in browser (http://localhost:4000) 
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
+## Future Exploration
 
-## Learn more
-
-  * Official website: https://www.phoenixframework.org/
-  * Guides: https://hexdocs.pm/phoenix/overview.html
-  * Docs: https://hexdocs.pm/phoenix
-  * Forum: https://elixirforum.com/c/phoenix-forum
-  * Source: https://github.com/phoenixframework/phoenix
+* Add a LiveView page to view and filter food carts
+* Add a Phoenix API and create Postman calls

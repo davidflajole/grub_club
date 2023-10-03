@@ -27,6 +27,7 @@
     * Prefer atoms as keys
     * Provide a few filter functions to fuel future development
     * Achieve moderate test coverage.
+    * Submit for paired review with zero credo suggestions
     
 
 
@@ -35,3 +36,5 @@
   * Add a LiveView page to view and filter food carts
   * Add a Phoenix API and create Postman calls
   * Refactor with LiveBook
+  * Replace mock_geo_sf_zip with a free account reverse geo lookup
+  * Create a Cart Struct

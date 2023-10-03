@@ -4,8 +4,9 @@
     * Erlang/OTP 26 [erts-14.0.2] [source] [64-bit] [smp:12:12] [ds:12:12:10] [async-threads:1] [jit:ns] [dtrace]
     * Elixir 1.15.6 (compiled with Erlang/OTP 26)
 
-  Steps to run tests:
+  Steps to run project:
     * Clone repo to working directory
+    * cd into grub_club
     * Run `mix setup` to install and setup dependencies
     * Run mix test to see tests are passing
     * Start Phoenix endpoint with `mix phx.server` or inside IEx with `iex -S mix phx.server`

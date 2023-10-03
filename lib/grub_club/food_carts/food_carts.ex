@@ -140,6 +140,8 @@ defmodule GrubClub.FoodCarts do
     end
   end
 
+  # Helper functions
+
   @spec find_dog_carts(binary) :: list
   defp find_dog_carts(food_item) do
     get_food_carts()

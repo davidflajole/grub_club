@@ -55,6 +55,15 @@ defmodule GrubClub.FoodCartsTest do
       assert Enum.count(burger_rows) > 0
       assert everything_except_dog_rows == nil
     end
+
+    test "find_carts_by_food_item/1 properly deals with CAPS" do
+      carts = FoodCarts.find_carts_by_food_item("dOgS")
+      burger_rows = Enum.find(carts, &(String.contains?(&1.food_items, "dogs")))
+      everything_except_dog_rows = Enum.find(carts, &(&1.food_items == "everything except for hot dogs"))
+
+      assert Enum.count(burger_rows) > 0
+      assert everything_except_dog_rows == nil
+    end
   end
 
   describe("find_carts_by_zip_code/1") do
